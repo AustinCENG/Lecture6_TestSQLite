@@ -31,14 +31,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Set the recyclerview of the main activity.
+        // TODO: Set the recyclerview of the main activity.
         RecyclerView recyclerView = findViewById(R.id.recyclerview);
         final RecyclerViewAdapter adapter = new RecyclerViewAdapter(this);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         mFlagViewModel = new ViewModelProvider(this).get(FlagViewModel.class);
-        // Add an observer on the LiveData returned by getAlphabetizedWords.
+        // TODO: Add an observer on the LiveData returned by getAlphabetizedWords.
         // The onChanged() method fires when the observed data changes and the activity is
         // in the foreground.
 
@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void addAdapter() {
         Spinner spinner = findViewById(R.id.spinner);
-        // Create an ArrayAdapter using the string array and a default spinner layout
+        // TODO: Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.continent_array, android.R.layout.simple_spinner_item);
         // Specify the layout to use when the list of choices appears
@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int pos, long l) {
-                // An item was selected. You can retrieve the selected item using
+                // TODO: An item was selected. You can retrieve the selected item using
                 // parent.getItemAtPosition(pos)
                 String selection = adapterView.getItemAtPosition(pos).toString();
                 switch (pos){
@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
                     case 2:
                     case 3:
                     case 5:
-                        selection = selection + "%";  // If All are selected
+                        selection = selection + "%";  // If One of the continent are selected
                         break;
                     case 4:
                         selection = "North_America" + "%";  // If "North America"
@@ -97,6 +97,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClick(View view) {
-
+        // TODO: To be implemented later on
+        Log.i("MapleLeaf", "Item is clicked");
     }
 }

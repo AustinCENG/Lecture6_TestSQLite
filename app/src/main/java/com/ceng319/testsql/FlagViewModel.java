@@ -24,8 +24,9 @@ public class FlagViewModel extends AndroidViewModel{
     public FlagViewModel(@NonNull Application application) {
         super(application);
         mRepository = new FlagRepository(application);
-        // mAllFlags = mRepository.getmAllFlags();
-        // mAllSelectedFlags = mRepository.getmAllsearchedFlags("Africa%");
+        // The following has a lambda expression in Java.
+        // More about Lambda expression:
+        // http://tutorials.jenkov.com/java/lambda-expressions.html
         mAllSelectedFlags = (LiveData<List<FlagEntity>>) Transformations.switchMap(flagType, filter -> {
             mAllSelectedFlags = mRepository.getmAllsearchedFlags(filter);
               return mAllSelectedFlags;

@@ -72,7 +72,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         } else {
             // Covers the case of data not being ready yet.
-            holder.wordItemView.setText("No Country Name");
+            holder.wordItemView.setText(R.string.no_country);
         }
     }
 
